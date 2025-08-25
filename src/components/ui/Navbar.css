@@ -1,3 +1,10 @@
+.navbar-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
     .navbar-desktop {
         display: none;

@@ -12,12 +12,7 @@ import {
     SidebarMenuItem,
     SidebarProvider
 } from "@/components/ui/Sidebar.tsx";
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-} from "@/components/ui/Navigation-menu.tsx"
+import {NavigationMenu, NavigationMenuItem, NavigationMenuList,} from "@/components/ui/Navigation-menu.tsx"
 
 class NavEntry {
     title: string;
@@ -40,14 +35,14 @@ function Navbar() {
 
     return (
         <>
-            <nav className="navbar-mobile">
+            <nav
+                className="navbar-mobile fixed z-50 w-[0.9] h-16 max-w-lg -translate-x-1/2 rounded-3xl bottom-4 left-1/2 bg-neutral-300 border-neutral-200 dark:bg-zinc-800 dark:border-zinc-600">
                 <NavigationMenu>
                     <NavigationMenuList>
                         {navEntries.map((entry, index) => (
-                            <NavigationMenuItem key={index}>
-                                <NavigationMenuTrigger>
-                                    <i className={entry.iconClassName}></i>
-                                </NavigationMenuTrigger>
+                            <NavigationMenuItem key={index} className="px-2">
+                                <Link to={entry.path} className="block p-2"><i
+                                    className={`${entry.iconClassName} text-2xl`}/></Link>
                             </NavigationMenuItem>
                         ))}
                     </NavigationMenuList>

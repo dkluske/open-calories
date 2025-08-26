@@ -23,7 +23,7 @@ interface HomeCardProps {
 
 function HomeCard(props: HomeCardProps) {
     return (
-        <Card className="w-full max-w-sm m-6">
+        <Card className="w-full max-w-xs m-4">
             <CardHeader className="text-left text-xl">
                 <CardTitle>{props.title}</CardTitle>
             </CardHeader>

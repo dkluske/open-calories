@@ -11,14 +11,17 @@ function App() {
   return (
       <BrowserRouter>
           <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-              <h1>OpenCalories</h1>
-              <Navbar/>
-              <Routes>
-                  <Route path="/" element={<Home/>}/>
-                  <Route path="/diary" element={<Diary/>}/>
-                  <Route path="/settings" element={<Settings/>}/>
-                  <Route path="*" element={<NotFound/>}/>
-              </Routes>
+              <Navbar children={
+                  <>
+                      <h1>OpenCalories</h1>
+                      <Routes>
+                          <Route path="/" element={<Home/>}/>
+                          <Route path="/diary" element={<Diary/>}/>
+                          <Route path="/settings" element={<Settings/>}/>
+                          <Route path="*" element={<NotFound/>}/>
+                      </Routes>
+                  </>
+              }/>
           </ThemeProvider>
       </BrowserRouter>
   )

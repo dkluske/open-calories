@@ -26,7 +26,7 @@ class NavEntry {
     }
 }
 
-function Navbar() {
+function Navbar({children}: { children: React.ReactNode }) {
     const navEntries: NavEntry[] = [
         new NavEntry("Home", "/", "bi bi-house-door"),
         new NavEntry("Diary", "/diary", "bi bi-journal-text"),
@@ -70,10 +70,10 @@ function Navbar() {
                             </SidebarGroup>
                         </SidebarContent>
                     </Sidebar>
+                    <main className="w-full">
+                        {children}
+                    </main>
                 </SidebarProvider>
-                {navEntries.map((entry, index) => (
-                    <Link to={entry.path} className="navbar-desktop-entry" key={index}>{entry.title}</Link>
-                ))}
             </nav>
         </>
     )

@@ -6,6 +6,7 @@ import Settings from "@/pages/Settings.tsx";
 import Navbar from "@/components/ui/Navbar.tsx";
 import NotFound from "@/pages/NotFound.tsx";
 import {ThemeProvider} from "@/lib/ThemeProvider.tsx";
+import Stats from "@/pages/Stats.tsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                       <Routes>
                           <Route path="/" element={<Home/>}/>
                           <Route path="/diary" element={<Diary/>}/>
+                          <Route path="/stats" element={<Stats/>}/>
                           <Route path="/settings" element={<Settings/>}/>
                           <Route path="*" element={<NotFound/>}/>
                       </Routes>

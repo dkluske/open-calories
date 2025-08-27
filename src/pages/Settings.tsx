@@ -2,6 +2,7 @@ import './Settings.css'
 import {Card, CardAction, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/Button.tsx";
 import {Input} from "@/components/ui/Input.tsx";
+import {Label} from "@/components/ui/label.tsx";
 
 class SettingsEntry {
     title: string;
@@ -40,13 +41,17 @@ function Settings() {
                 </CardHeader>
                 <CardContent>
                     {settingsEntries.map((entry, index) => (
-                        <Input
-                            key={index}
-                            placeholder={entry.title}
-                            type={entry.type}
-                            defaultValue={entry.value}
-                            className="m-2"
-                        />
+                        <div className="my-4">
+                            <Label htmlFor={entry.title}>{entry.title}</Label>
+                            <Input
+                                id={entry.title}
+                                key={index}
+                                placeholder={entry.title}
+                                type={entry.type}
+                                defaultValue={entry.value}
+                                className="m-2"
+                            />
+                        </div>
                     ))}
                 </CardContent>
             </Card>

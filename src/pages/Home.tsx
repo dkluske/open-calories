@@ -43,8 +43,8 @@ function Home() {
                             dataset={distributionDataset}
                             xAxis={[{dataKey: "label"}]}
                             series={[
-                                {dataKey: 'target', label: 'Target', valueFormatter},
-                                {dataKey: 'actual', label: 'Actual', valueFormatter}
+                                {color: "#A6D07D", dataKey: 'target', label: 'Target', valueFormatter},
+                                {color: "#a1f14d", dataKey: 'actual', label: 'Actual', valueFormatter}
                             ]}
                         />
                     </CardContent>
@@ -61,7 +61,8 @@ function Home() {
                             series={[
                                 {
                                     data: [1800, 2200, 2000, 1950, 1770, 2020, 2156],
-                                    valueFormatter: (value) => (valueFormatter(value))
+                                    valueFormatter: (value) => (valueFormatter(value)),
+                                    color: "#a1f14d"
                                 }
                             ]}
                         />

@@ -1,6 +1,29 @@
 import './Home.css'
 import {Card, CardAction, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 import {Link} from "react-router-dom";
+import {BarChart, LineChart} from "@mui/x-charts";
+
+const distributionDataset = [
+    {
+        target: 60,
+        actual: 50,
+        label: "Protein"
+    },
+    {
+        target: 20,
+        actual: 25,
+        label: "Carbs"
+    },
+    {
+        target: 20,
+        actual: 25,
+        label: "Fat"
+    }
+]
+
+function valueFormatter(value: number | null) {
+    return value ? new Intl.NumberFormat("de-DE").format(value) : "N/A";
+}
 
 function Home() {
     return (
@@ -16,7 +39,14 @@ function Home() {
                         <CardTitle>Your macro distribution</CardTitle>
                     </CardHeader>
                     <CardContent className="text-2xl text-right font-light">
-                        <div>Chart Here</div>
+                        <BarChart
+                            dataset={distributionDataset}
+                            xAxis={[{dataKey: "label"}]}
+                            series={[
+                                {dataKey: 'target', label: 'Target', valueFormatter},
+                                {dataKey: 'actual', label: 'Actual', valueFormatter}
+                            ]}
+                        />
                     </CardContent>
                 </Card>
             </div>
@@ -26,7 +56,15 @@ function Home() {
                         <CardTitle>Your 7-day recap</CardTitle>
                     </CardHeader>
                     <CardContent className="text-2xl text-right font-light">
-                        <div>Chart Here</div>
+                        <LineChart
+                            xAxis={[{data: [1, 2, 3, 4, 5, 6, 7]}]}
+                            series={[
+                                {
+                                    data: [1800, 2200, 2000, 1950, 1770, 2020, 2156],
+                                    valueFormatter: (value) => (valueFormatter(value))
+                                }
+                            ]}
+                        />
                     </CardContent>
                 </Card>
             </div>

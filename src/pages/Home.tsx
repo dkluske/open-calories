@@ -1,7 +1,7 @@
 import './Home.css'
 import {Card, CardAction, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 import {Link} from "react-router-dom";
-import {BarChart, LineChart} from "@mui/x-charts";
+import {axisClasses, BarChart, LineChart} from "@mui/x-charts";
 
 const distributionDataset = [
     {
@@ -46,6 +46,19 @@ function Home() {
                                 {color: "#A6D07D", dataKey: 'target', label: 'Target', valueFormatter},
                                 {color: "#a1f14d", dataKey: 'actual', label: 'Actual', valueFormatter}
                             ]}
+                            hideLegend={true}
+                            sx={() => ({
+                                [`.${axisClasses.root}`]: {
+                                    [`.${axisClasses.tick}, .${axisClasses.line}`]: {
+                                        stroke: 'var(--color-foreground)',
+                                        strokeWidth: 2
+                                    },
+                                    [`.${axisClasses.tickLabel}`]: {
+                                        fill: 'var(--color-foreground)',
+                                        fontFamily: "Space Grotesk"
+                                    },
+                                }
+                            })}
                         />
                     </CardContent>
                 </Card>
@@ -65,6 +78,18 @@ function Home() {
                                     color: "#a1f14d"
                                 }
                             ]}
+                            hideLegend={true}
+                            sx={() => ({
+                                [`.${axisClasses.root}`]: {
+                                    [`.${axisClasses.tick}, .${axisClasses.line}`]: {
+                                        stroke: 'var(--color-foreground)',
+                                        strokeWidth: 2,
+                                    },
+                                    [`.${axisClasses.tickLabel}`]: {
+                                        fill: 'var(--color-foreground)',
+                                    },
+                                }
+                            })}
                         />
                     </CardContent>
                 </Card>

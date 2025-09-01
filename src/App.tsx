@@ -2,6 +2,7 @@ import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "@/pages/Home.tsx";
 import Diary from "@/pages/Diary.tsx";
+import Favourites from "@/pages/Favourites.tsx";
 import Settings from "@/pages/Settings.tsx";
 import Navbar from "@/components/ui/Navbar.tsx";
 import NotFound from "@/pages/NotFound.tsx";
@@ -18,6 +19,7 @@ function App() {
                       <Routes>
                           <Route path="/" element={<Home/>}/>
                           <Route path="/diary" element={<Diary/>}/>
+                          <Route path="/favourites" element={<Favourites/>}/>
                           <Route path="/stats" element={<Stats/>}/>
                           <Route path="/settings" element={<Settings/>}/>
                           <Route path="*" element={<NotFound/>}/>

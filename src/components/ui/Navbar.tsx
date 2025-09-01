@@ -30,6 +30,7 @@ function Navbar({children}: { children: React.ReactNode }) {
     const navEntries: NavEntry[] = [
         new NavEntry("Home", "/", "bi bi-house-door"),
         new NavEntry("Diary", "/diary", "bi bi-journal-text"),
+        new NavEntry("Favourites", "/favourites", "bi bi-heart"),
         new NavEntry("Stats", "/stats", "bi bi-graph-up"),
         new NavEntry("Settings", "/settings", "bi bi-gear")
     ]

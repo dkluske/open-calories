@@ -8,27 +8,30 @@ import Navbar from "@/components/ui/Navbar.tsx";
 import NotFound from "@/pages/NotFound.tsx";
 import {ThemeProvider} from "@/lib/ThemeProvider.tsx";
 import Stats from "@/pages/Stats.tsx";
+import {databaseExists} from "@/lib/Database.ts";
 
 function App() {
-  return (
-      <BrowserRouter>
-          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-              <Navbar children={
-                  <>
-                      <h1>OpenCalories</h1>
-                      <Routes>
-                          <Route path="/" element={<Home/>}/>
-                          <Route path="/diary" element={<Diary/>}/>
-                          <Route path="/favourites" element={<Favourites/>}/>
-                          <Route path="/stats" element={<Stats/>}/>
-                          <Route path="/settings" element={<Settings/>}/>
-                          <Route path="*" element={<NotFound/>}/>
-                      </Routes>
-                  </>
-              }/>
-          </ThemeProvider>
-      </BrowserRouter>
-  )
+    databaseExists();
+
+    return (
+        <BrowserRouter>
+            <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+                <Navbar children={
+                    <>
+                        <h1>OpenCalories</h1>
+                        <Routes>
+                            <Route path="/" element={<Home/>}/>
+                            <Route path="/diary" element={<Diary/>}/>
+                            <Route path="/favourites" element={<Favourites/>}/>
+                            <Route path="/stats" element={<Stats/>}/>
+                            <Route path="/settings" element={<Settings/>}/>
+                            <Route path="*" element={<NotFound/>}/>
+                        </Routes>
+                    </>
+                }/>
+            </ThemeProvider>
+        </BrowserRouter>
+    )
 }
 
 export default App

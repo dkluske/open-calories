@@ -13,18 +13,7 @@ import {
     SidebarProvider
 } from "@/components/ui/Sidebar.tsx";
 import {NavigationMenu, NavigationMenuItem, NavigationMenuList,} from "@/components/ui/Navigation-menu.tsx"
-
-class NavEntry {
-    title: string;
-    path: string;
-    iconClassName: string;
-
-    constructor(title: string, path: string, iconClassName: string) {
-        this.title = title;
-        this.path = path;
-        this.iconClassName = iconClassName;
-    }
-}
+import {NavEntry} from "@/models/NavEntry.ts";
 
 function Navbar({children}: { children: React.ReactNode }) {
     const navEntries: NavEntry[] = [

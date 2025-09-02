@@ -3,18 +3,7 @@ import {Card, CardAction, CardContent, CardHeader, CardTitle} from "@/components
 import {Button} from "@/components/ui/Button.tsx";
 import {Input} from "@/components/ui/Input.tsx";
 import {Label} from "@/components/ui/label.tsx";
-
-class SettingsEntry {
-    title: string;
-    type: string;
-    value?: string;
-
-    constructor(title: string, type: string, value?: string) {
-        this.title = title;
-        this.type = type;
-        this.value = value;
-    }
-}
+import {SettingsEntry} from "@/models/SettingsEntry.ts";
 
 function Settings() {
     const onSave = () => {

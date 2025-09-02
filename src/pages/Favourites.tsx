@@ -2,15 +2,7 @@ import './Favourites.css'
 import {Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/Button.tsx";
 import {useEffect, useState} from "react";
-
-class Favourite {
-    name: string
-
-    constructor(name: string) {
-        this.name = name;
-    }
-
-}
+import {Favourite} from "@/models/Favourite.ts";
 
 function Favourites() {
     const onAdd = () => {
